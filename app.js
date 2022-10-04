@@ -2,6 +2,7 @@ const express = require('express');
 const session = require("express-session");
 const path = require('path');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const app = express();
@@ -43,6 +44,7 @@ app.use(session({
 }));
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
+app.use(cookieParser('foo'));
 app.use(passport.initialize());
 app.use(passport.session());
 
