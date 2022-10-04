@@ -13,6 +13,9 @@ const dbConfig = {
     useUnifiedTopology: true
 }
 
+// serve client
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 // db connection
 mongoose.connect(
     'mongodb+srv://isaac:kaHani745@cluster0.s06wdno.mongodb.net/layout-app?retryWrites=true&w=majority', 
